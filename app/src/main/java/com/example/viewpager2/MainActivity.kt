@@ -43,6 +43,7 @@ class MainActivity : FragmentActivity() {
         pager.clipToPadding = false
         pager.clipChildren = false
         pager.currentItem = 1
+
     }
 
 }

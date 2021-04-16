@@ -40,8 +40,8 @@ class MainActivity : FragmentActivity() {
             page.scaleX = 1 - (0.25f * kotlin.math.abs(position))
         }
         pager.setPageTransformer(pageTransformer)
-        pager.clipToPadding = true
-        pager.clipChildren = true
+        pager.clipToPadding = false
+        pager.clipChildren = false
         pager.currentItem = 1
     }
 

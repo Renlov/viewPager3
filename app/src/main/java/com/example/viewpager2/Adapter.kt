@@ -18,8 +18,8 @@ import org.w3c.dom.Text
 
 class Adapter(val arrayList: ArrayList<Item>, val context: Context) : RecyclerView.Adapter<Adapter.AdapterHolder>(){
     inner class AdapterHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-        var imageView : ImageView = itemView.findViewById(R.id.imageView)
-        var textView : TextView = itemView.findViewById(R.id.textView)
+        var text : TextView = itemView.findViewById(R.id.text)
+        var cost : TextView = itemView.findViewById(R.id.cost)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterHolder {
@@ -29,8 +29,8 @@ class Adapter(val arrayList: ArrayList<Item>, val context: Context) : RecyclerVi
 
     override fun onBindViewHolder(holder: AdapterHolder, position: Int) {
         val currentItem : Item = arrayList[position]
-        holder.textView.text = currentItem.text
-        Glide.with(context).load(currentItem.image).into(holder.imageView)
+        holder.text.text = currentItem.text
+        holder.cost.text = currentItem.cost
     }
 
     override fun getItemCount(): Int {
